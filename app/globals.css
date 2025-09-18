@@ -1,0 +1,229 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to minimalist color system with navy blue primary and clean neutrals */
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --card: #f0f4f8;
+  --card-foreground: #1f2937;
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
+  --primary: #003a70;
+  --primary-foreground: #ffffff;
+  --secondary: #009cda;
+  --secondary-foreground: #ffffff;
+  --muted: #f0f4f8;
+  --muted-foreground: #4b5563;
+  --accent: #009cda;
+  --accent-foreground: #ffffff;
+  --destructive: #d9534f;
+  --destructive-foreground: #ffffff;
+  --border: #e0e0e0;
+  --input: #f0f4f8;
+  --ring: rgba(0, 58, 112, 0.2);
+  --success: #28a745;
+  --warning: #ffc107;
+  --text-secondary: #4b5563;
+  --tertiary: #1f2937;
+  --chart-1: #003a70;
+  --chart-2: #009cda;
+  --chart-3: #28a745;
+  --chart-4: #ffc107;
+  --chart-5: #d9534f;
+  --radius: 8px;
+  --sidebar: #f0f4f8;
+  --sidebar-foreground: #1f2937;
+  --sidebar-primary: #003a70;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8f4fd;
+  --sidebar-accent-foreground: #003a70;
+  --sidebar-border: #e0e0e0;
+  --sidebar-ring: rgba(0, 58, 112, 0.2);
+}
+
+.dark {
+  /* Updated dark mode with consistent minimalist approach */
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #0ea5e9;
+  --primary-foreground: #ffffff;
+  --secondary: #009cda;
+  --secondary-foreground: #ffffff;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #334155;
+  --accent-foreground: #f8fafc;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #334155;
+  --input: #1e293b;
+  --ring: rgba(14, 165, 233, 0.3);
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #0ea5e9;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #334155;
+  --sidebar-ring: rgba(14, 165, 233, 0.3);
+}
+
+@theme inline {
+  --font-cairo: var(--font-cairo);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-text-secondary: var(--text-secondary);
+  --color-tertiary: var(--tertiary);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: 6px;
+  --radius-md: var(--radius);
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-cairo;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Updated typography scale for minimalist design with better hierarchy */
+  .text-display {
+    @apply text-3xl md:text-4xl font-bold tracking-tight leading-tight;
+  }
+
+  .text-title-1 {
+    @apply text-2xl md:text-3xl font-bold tracking-tight leading-tight;
+  }
+
+  .text-title-2 {
+    @apply text-xl md:text-2xl font-semibold tracking-tight leading-snug;
+  }
+
+  .text-title-3 {
+    @apply text-lg md:text-xl font-semibold leading-snug;
+  }
+
+  .text-headline {
+    @apply text-base font-semibold leading-normal;
+  }
+
+  .text-body {
+    @apply text-sm leading-relaxed;
+  }
+
+  .text-callout {
+    @apply text-sm font-medium leading-normal;
+  }
+
+  .text-caption {
+    @apply text-xs text-muted-foreground leading-normal;
+  }
+
+  /* Simplified interactive elements with cleaner styling */
+  .minimal-button {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-medium transition-all duration-200 ease-out;
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .minimal-card {
+    @apply rounded-lg border border-border bg-card;
+    @apply hover:border-border/80 transition-all duration-200 ease-out;
+  }
+
+  .minimal-input {
+    @apply rounded-lg border border-border bg-input px-4 py-3 text-sm;
+    @apply focus:border-primary focus:ring-2 focus:ring-ring focus:ring-offset-0 transition-all duration-200;
+    @apply placeholder:text-muted-foreground;
+  }
+
+  /* Removed heavy shadows for cleaner minimalist look */
+  .minimal-shadow {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .minimal-shadow-lg {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Cleaner scrollbar design */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-muted-foreground);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+
+  /* Added utility classes for consistent spacing */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  .content-max-width {
+    @apply max-w-4xl mx-auto;
+  }
+}
